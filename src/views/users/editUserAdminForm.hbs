@@ -1,0 +1,183 @@
+<div class="col-md-8 mx-auto mt-0">
+    <div class="card ">
+        <div class="card-header text-center bg-secondary">            
+            <h1 class="h4 text-white font-weight-bold">Edición de usuarios</h1>
+        </div>
+        <div class="card-body">  
+
+            <form action="/users/editUserAdmin/{{user1.id}}?_method=PUT" class= "justify-content-center" method="POST">             
+                <input type="hidden" name="_method" value="PUT">  
+                
+                <h6 class="font-weight-bold mt-0 mb-1">Información personal</h6>                              
+                <div class="form-group row d-flex justify-content-center"> 
+                    <div class="col-md-6 mb-2">                        
+                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="identification_type">
+                            <!-- Circulear externa 024 de 2019 Ministerio de protección social -->                            
+                            <option selected>{{user1.identification_type}}</option>                            
+                            <option value="Cedula">Cédula</option>
+                            <option value="Cedula_extrangeria">Cédula de extrangeria</option>
+                            <option value="Pasaporte">Pasaporte</option>
+                            <option value="Tarjeta_identidad">Tarjeta de identidad</option>
+                            <option value="Registro_civil">Registri civil</option>
+                            <option value="Carnet_diplomatico">Carné diplomático</option>
+                            <option value="Salvoconducto">Salvoconducto</option>
+                            <option value="Perm_especial_permanencia">Perrmiso especial de permanencia</option>
+                            <option value="Documento_extrangero">Documento extrangero</option>
+                            <option value="Sin_identificacion">Sin identificación</option>
+                        </select>
+                    </div> 
+                    <div class="col-md-6 mb-2">
+                        <input type="number" class="form-control bg-light" name="identification" placeholder="Número de identificación"
+                            value="{{user1.identification}}">
+                    </div>     
+                    <div class="col-md-4 mb-0">
+                        <input type="text" class="form-control bg-light" name="name" placeholder="Nombres"
+                            value="{{user1.name}}">
+                    </div>
+                    <div class="col-md-4 mb-0">
+                        <input type="text" class="form-control bg-light" name="lastname" placeholder="Primer apellido"
+                            value="{{user1.lastname}}">
+                    </div>
+                    <div class="col-md-4 mb-0">
+                        <input type="text" class="form-control bg-light" name="sec_lastname"
+                            placeholder="Segundo apellido" value="{{user1.sec_lastname}}">
+                    </div>                                       
+                </div>                                  
+                <hr>
+
+                <h6 class="font-weight-bold mt-0 mb-1">Información general</h6>                              
+                <div class="form-group row"> 
+                    <div class="col-md-6 mb-0">
+                        <label for="f_nac" class="mb-0">Fecha de nacimiento:</label>
+                        <input type="date" class="form-control bg-light mt-0" id="f_nac" name="date_of_bird" placeholder="Fecha de nacimiento"
+                            value="{{user1.date_of_bird}}">
+                    </div>
+                    <div class="col-md-6 mb-2">  
+                        <label for="genero" class="mb-0">Genero:</label>                      
+                        <select class="custom-select mr-sm-2" id="gender" name="gender"> 
+                            <option selected>{{user1.gender}}</option>           
+                            <option value="Masculino">Masculino</option> 
+                            <option value="Femenino">Femenino</option>  
+                            <option value="Otro">Otro</option>                         
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-2">  
+                        <label for="sangre" class="mb-0">Tipo de sangre:</label>                      
+                        <select class="custom-select mr-sm-2" id="blood_type" name="blood_type">
+                            <option selected>{{user1.blood_type}}</option>             
+                            <option value="A">A</option> 
+                            <option value="B">B</option>
+                            <option value="AB">AB</option>
+                            <option value="O">O</option>                           
+                        </select>                        
+                    </div>
+                    <div class="col-md-6 mb-2"> 
+                        <label for="rh" class="mb-0">Rh:</label>                      
+                        <select class="custom-select mr-sm-2" id="rh" name="rh">
+                            <option selected>{{user1.rh}}</option>            
+                            <option value="Positivo">Positivo</option> 
+                            <option value="Negativo">Negativo</option>                           
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-0"> 
+                        <label for="marital_status" class="mb-0">Estado civil:</label>                      
+                        <select class="custom-select mr-sm-2" id="marital_status" name="marital_status"> 
+                            <option selected>{{user1.marital_status}}</option>           
+                            <option value="Soltero">Soltero/a</option> 
+                            <option value="Casado">Casado/a</option>  
+                            <option value="UnionLibre">Unión libre</option>
+                            <option value="Divorciado">Divorsiado/a</option>
+                            <option value="Separado">Separado/a</option> 
+                            <option value="Viudo">Viudo/a</option>                        
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-0">
+                        <label for="eps" class="mb-0">EPS:</label> 
+                        <input type="text" class="form-control bg-light" id="EPS" name="EPS" placeholder="EPS a la que está afiliado/a"
+                        value="{{user1.EPS}}">           
+                    </div>
+                </div>
+                <hr>
+
+                <h6 class="font-weight-bold mt-0 mb-1">Datos de localización</h6>                              
+                <div class="form-group row"> 
+                    <div class="col-md-6 mb-2"> 
+                        <input type="number" class="form-control bg-light" name="home_phone"
+                            placeholder="Teléfono de la casa" value="{{user1.home_phone}}">
+                    </div>
+                    <div class="col-md-6 mb-2"> 
+                        <input type="number" class="form-control bg-light" name="mobile_phone"
+                            placeholder="Teléfono móvil" value="{{user1.mobile_phone}}">
+                    </div> 
+                    <div class="col-md-6 mb-2"> 
+                        <input type="number" class="form-control bg-light" name="work_phone"
+                            placeholder="Teléfono del trabajo" value="{{user1.work_phone}}">
+                    </div>
+                    <div class="col-md-6 mb-2"> 
+                        <input type="text" class="form-control bg-light" name="address"
+                            placeholder="Dirección" value="{{user1.address}}">
+                    </div>
+                    <div class="col-md-6 mb-0"> 
+                        <input type="text" class="form-control bg-light" name="city"
+                            placeholder="Ciudad" value="{{user1.city}}">
+                    </div>
+                    <div class="col-md-6 mb-0"> 
+                        <input type="text" class="form-control bg-light" name="department"
+                            placeholder="Departamento" value="{{user1.work_phone}}">
+                    </div>
+                </div>
+                <hr>
+
+                <h6 class="font-weight-bold mt-0 mb-1">Información de sesión</h6>                              
+                <div class="form-group row d-flex justify-content-center">                    
+                    <div class="col-md-6 mb-2">                        
+                        <select class="custom-select mr-sm-2" id="role" name="role">
+                            <option selected>{{user1.role}}</option>
+                            <option value="Paciente">Paciente</option>
+                            <option value="Empleado">Empleado</option>
+                            <option value="Medico">Médico</option>
+                            <option value="Admin">Administrador de la plataforma</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <input type="email" class="form-control bg-light" name="email" placeholder="Email"
+                            value="{{user1.email}}">
+                    </div>                                    
+                </div>
+                <hr> 
+
+                <h6 class="font-weight-bold mt-0 mb-1">Información de contacto</h6>                              
+                <div class="form-group row">
+                    <div class="col-md-4 mb-2">
+                        <input type="text" class="form-control bg-light" name="contact_name" placeholder="Nombres del contacto"
+                            value="{{user1.contact_name}}">
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <input type="text" class="form-control bg-light" name="contact_lastname" placeholder="Primer apellido del contacto"
+                            value="{{user1.contact_lastname}}">
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <input type="text" class="form-control bg-light" name="contact_sec_lastname"
+                            placeholder="Segundo apellido del contacto" value="{{user1.contact_sec_lastname}}">
+                    </div>
+                    <div class="col-md-6 mb-0">
+                        <input type="text" class="form-control bg-light" name="contact_relationship"
+                            placeholder="Relación o parentesco" value="{{user1.contact_relationship}}">
+                    </div>
+                    <div class="col-md-6 mb-0">
+                        <input type="number" class="form-control bg-light" name="contact_phone"
+                            placeholder="Teléfono del contacto" value="{{user1.contact_phone}}">
+                    </div>
+                </div>
+                <hr>        
+                
+                <div class="col-md-4 mx-auto">                  
+                    <button class="btn btn-primary btn-block">Guardar</button>
+                </div>
+                
+            </form>            
+        </div>
+    </div>    
+</div>
+
+<br>

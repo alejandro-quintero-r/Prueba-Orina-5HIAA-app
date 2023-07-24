@@ -1,0 +1,32 @@
+<div class="col-md-4 mx-auto mt-0">
+    <div class="card">
+        <div class="card-header text-center bg-secondary"> 
+            <h1 class="h4 text-white font-weight-bold">Cambiar mi contraseña</h1>          
+        </div>
+        <div class="card-body">                
+            <form action="/users/changePasswd" class= "justify-content-center" method="POST">                         
+                <div class="form-group row">
+                    <div class="col-md-12 mx-auto">
+                        <input type="password" class="form-control bg-light" name="actual_password" placeholder="Contraseña actual">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12 mx-auto">
+                        <input type="password" class="form-control bg-light" name="new_password" placeholder="Nueva contraseña">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-12 mx-auto">
+                        <input type="password" class="form-control bg-light" name="confirm_new_password" placeholder="Confirmar nueva contraseña">
+                    </div>
+                </div>
+                <div class="col-md-15 mx-auto">                    
+                    <button class="btn btn-primary btn-block">Cambiar contraseña</button>
+                </div>                
+            </form>                      
+        </div>
+    </div>    
+</div>
+
+
+<br>

@@ -1,0 +1,34 @@
+<h2>
+    {{date}}
+    {{hour}}
+</h2>
+
+<div class="col-md-10 mx-auto mt-0">
+<div> 
+  <hr>
+  <h2> <p class="font-italic inline">Ordenes Pendientes</p></h2>  
+  <hr>
+</div>
+  <table class="table table-light table-bordered table-hover overflow-y: hidden">
+    <thead class="table-secondary">
+      <tr>
+        <th scope="col">Paciente</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Observación</th>
+        <th scope="col">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>   
+      {{#each ordersData}} 
+        <tr>
+          <th scope="row">{{name}} {{lastname}}</th>
+          <td>{{date}}</td>
+          <td>{{hour}}</td>
+          <td>{{observation}}</td>
+          <td class="d-flex flex-column align-items-center"><a href="/results/form/{{orderID}}"> <button class="btn btn-info "> Agregar resultado</a> </button> </td>
+        </tr>
+      {{/each}}     
+    </tbody>
+  </table>
+</div>

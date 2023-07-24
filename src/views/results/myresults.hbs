@@ -1,0 +1,29 @@
+<h2>
+    Resultados del paciente
+</h2>
+
+<div class="col-md-10 mx-auto mt-0">
+<div> 
+
+</div>
+  <table class="table table-light table-bordered table-hover overflow-y: hidden">
+    <thead class="table-secondary">
+      <tr>
+        <th scope="col">Resultado</th>
+        <th scope="col">Observación</th>
+        <th scope="col">Fecha de examen</th>
+        <th scope="col">Ordenado por</th>
+      </tr>
+    </thead>
+    <tbody>   
+      {{#each data}} 
+        <tr>
+          <td>{{result}}</td>
+          <td>{{observation}}</td>
+          <td>{{createdAt}}</td>
+          <td>{{physicianName}}</td>
+        </tr>
+      {{/each}}     
+    </tbody>
+  </table>
+</div>

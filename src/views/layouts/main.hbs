@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Page Header -->
+    {{>head}}    
+
+    <body>
+        <div class="wrapper">
+
+            <!--sidebar -->
+{{!--             {{>sidebar}} --}}
+
+            <div class="w-100">
+
+                <!--navbar-->
+                {{>navbar}}
+
+                <!-- Page Content  -->
+                <div id="content">
+                    {{>errors}}
+                    {{>messages}}
+                    <!-- Page Body -->
+                    {{{body}}}
+
+                    {{>footer}}
+            
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Scripts  -->
+        {{>script}}
+    </body>
+</html> 

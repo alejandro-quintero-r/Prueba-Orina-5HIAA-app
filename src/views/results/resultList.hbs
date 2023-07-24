@@ -1,0 +1,28 @@
+<h2 class="text-center">
+    Exámenes realizados
+</h2>
+
+<div class="col-md-10 mx-auto mt-0">
+<div> 
+
+</div>
+  <table class="table table-light table-bordered table-hover overflow-y: hidden">
+    <thead class="table-secondary">
+      <tr>
+        <th scope="col">Paciente</th>
+        <th scope="col">Resultado</th>
+        <th scope="col">Observación</th>
+      </tr>
+    </thead>
+    <tbody>   
+      {{#each data}} 
+        <tr>
+          <th scope="row">{{name}} {{lastname}} {{sec_lastname}}</th>
+          <td>{{result}}</td>
+          <td>{{observation}}</td>
+          {{!-- <td><a href="/results/form/{{orderID}}">Agregar resultado</a></td> --}}
+        </tr>
+      {{/each}}     
+    </tbody>
+  </table>
+</div>

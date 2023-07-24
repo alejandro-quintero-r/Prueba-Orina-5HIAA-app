@@ -1,0 +1,52 @@
+<div class="col-md-10 mx-auto mt-0">
+<div> 
+  <hr>
+  <h2> <p class="font-italic inline">Usuarios</p></h2>  
+  <hr>
+</div>
+{{#if pList}}
+  <table class="table table-light table-bordered table-hover overflow-y: hidden">
+    <thead class="table-secondary">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombres</th>
+        <th scope="col">Primer apellido</th>
+        <th scope="col">Segundo apellido</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Correo electrónico</th>
+        <th scope="col">Tipo</th>      
+        <th scope="col">Ver</th>
+        <th scope="col">Eliminar</th>  
+      </tr>
+    </thead>
+    <tbody>   
+      {{#each pList}} 
+        <tr>
+          <th scope="row">{{@index}}</th>
+          <td>{{name}}</td>
+          <td>{{lastname}}</td>
+          <td>{{sec_lastname}}</td>
+          <td>{{identification}}</td>
+          <td>{{email}}</td>
+          <td>{{role}}</td>
+          <td>        
+            <a href="/users/seeUserAdminForm/{{_id}}"><button class="btn btn-success btn-block btn-sm">Perfil</button></a>        
+          </td>      
+          <td>
+            <form action="/users/deleteUserAdmin/{{_id}}?_method=DELETE" method="POST" onsubmit="return confirmation()">
+              <button type="=submit" class="btn btn-danger btn-block btn-sm">Eliminar</button> 
+            </form>
+          </td> 
+        </tr>
+      {{/each}}     
+    </tbody>
+  </table>
+{{else}}
+  <br>
+  <br>
+  <br>
+  <div>
+    <h4>No se encontró ningún usuario!!</h4>
+  </div>
+{{/if}}
+</div>

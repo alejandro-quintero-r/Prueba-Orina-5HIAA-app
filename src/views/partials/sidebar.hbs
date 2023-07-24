@@ -1,0 +1,122 @@
+<!-- Sidebar  -->
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3 class="mb-0 mt-1 text-center font-italic font-weight-bold">5H-IAA</h3>
+        <h5 class="mt-0 mb-0 text-center">Control estadístico</h5>
+    </div>
+
+    <ul class="list-unstyled components mt-0"> 
+        <li class="active mt-0">
+            <a href="/users/signInForm">Inicio</a>
+        </li>       
+
+
+        {{#if Admin}}
+        <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usuarios</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="/users/createUserForm">Agregar usuario</a>
+                </li>        
+                <li>
+                    <a href="/users/seeAllPatientsAdmin">Lista de pacientes</a>
+                </li>
+                <li>
+                    <a href="/users/seeAllPhysicianAdmin">Lista de médicos</a>
+                </li>
+                <li>
+                    <a href="/users/seeAllLabStaffAdmin">Lista de empleados</a>
+                </li>
+                <li>
+                    <a href="/users/seeAllAdmin">Lista de administradores</a>
+                </li>
+                <li>
+                    <a href="/users/seeAllUsersAdmin">Listar todos</a>
+                </li>
+                <li>
+                    <a href="/users/findUserByIdentification">Búsqueda de usuario por cédula</a>
+                </li>
+                <li>
+                    <a href="/users/findUserByEmail">Búsqueda de usuario por email</a>
+                </li>
+            </ul>
+        </li>  
+        {{/if}}
+
+        <li >
+            <a href="#Estadísticas" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle mt-0">Estadísticas</a> 
+            <ul class="collapse list-unstyled" id="Estadísticas">
+                <li>
+                    <a href="/statistics/gender">Género</a>
+                    {{#if Medico}}
+                    <a href="/statistics/AnormalResultsTracking">Resultados anormales</a>
+                    {{/if}}
+                    {{#if Paciente}}
+                    <a href='/results/myresults'>Mis resultados</a>
+                    {{/if}}
+                </li>
+            </ul>
+        </li>         
+
+        {{#if Medico}}
+        <li >
+            <a href="#ordenes" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle mt-0">Órdenes</a> 
+            <ul class="collapse list-unstyled" id="ordenes">
+                <li>
+                    <a href="/orders/form">Asignar orden</a>
+                </li>
+            </ul>
+        </li>  
+
+        <li >
+            <a href="#resultados" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle mt-0">Resultados</a> 
+            <ul class="collapse list-unstyled" id="resultados">
+                <li>
+                    <a href="/results/allResults">Exámenes realizados</a>
+                </li>
+            </ul>
+        </li>
+        {{/if}}
+
+        {{#if Empleado}}
+                <li >
+            <a href="#ordenes" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle mt-0">Órdenes</a> 
+            <ul class="collapse list-unstyled" id="ordenes">
+                <li>
+                    <a href="/orders/allOrders">Ordenes pendientes</a>
+                </li>
+            </ul>
+        </li>  
+        {{/if}}
+
+        <li>
+            <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Departamento del Huila</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu3">
+                <li>
+                    <a target="_blank" href="https://www.huila.gov.co/salud/">Secretaria de salud del huila</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.huila.gov.co/">Gobernación del Huila</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.minsalud.gov.co">Ministerio de salud</a>
+                </li>
+            </ul>
+        </li>
+
+        {{#if user}}
+        <li>
+            <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Mi perfil</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu4">
+                <li>
+                    <a href="/users/myProfile">Mi perfil</a>
+                </li>
+                <li>
+                    <a href="/users/changePasswd">Cambiar mi contraseña</a>
+                </li>
+            </ul>
+        </li>
+        {{/if}}
+
+    </ul>
+</nav>

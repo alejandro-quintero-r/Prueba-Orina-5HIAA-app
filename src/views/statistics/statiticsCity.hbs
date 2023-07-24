@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="text-center">Estadísticas por municipio</h1>
+    <input type="hidden" id="keys" value="{{keys}}">
+    <input type="hidden" id="valores" value="{{valores}}">
+    <canvas id="barras"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  var keys = (document.getElementById('keys').value.split(","));
+  var valoresInput = document.getElementById('valores').value;
+  var valores = valoresInput.split(",").map(function(valor) {
+      return parseInt(valor.trim());
+    });
+
+  var ctx = document.getElementById('barras').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: keys,
+      datasets: [{
+        label: 'Exámenes realizados',
+        data: valores,
+        backgroundColor: 'rgba(54, 162, 235, 0.8)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>

@@ -1,0 +1,117 @@
+<!-- Navbar  -->
+<nav class="navbar navbar-expand-lg navbar-black">
+    <div class="container-fluid">
+
+        <div class="sidebar-header">
+            <h3 class="mb-0 mt-1 text-center font-italic font-weight-bold">5H-IAA</h3>
+            <h5 class="mt-0 mb-0 text-center">Control estadístico</h5>
+        </div>
+
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/users/signInForm">Inicio</a>
+            </li>
+            
+            <li class="dropdown" style="cursor:pointer;">
+                <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Estadísticas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="/statistics/gender" class="dropdown-item">Género</a>
+                    <a href="/statistics/city" class="dropdown-item">Municipio</a>
+                    {{#if Medico}}
+                    <a href="/statistics/AnormalResultsTracking" class="dropdown-item">Resultados anormales</a>
+                    {{/if}}
+                    {{#if Paciente}}
+                    <a href='/results/myresults' class="dropdown-item">Mis resultados</a>
+                    {{/if}}
+                </div>
+            </li>
+
+            <li class="dropdown" style="cursor:pointer;">
+                <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Departamento del Huila
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="https://www.huila.gov.co/salud/" class="dropdown-item">Departamento del Huila</a>
+                    <a href="https://www.huila.gov.co/salud/" class="dropdown-item">Secretaría de salud del Huila</a>
+                    <a href='https://www.huila.gov.co/' class="dropdown-item">Gobernación del Huila</a>
+                    <a href='https://www.minsalud.gov.co' class="dropdown-item">Ministerio de salud</a>
+                </div>
+            </li>
+
+        {{#if Admin}}
+
+        <li class="dropdown" style="cursor:pointer;">
+            <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Usuarios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="/users/createUserForm" class="dropdown-item">Agregar un usuario</a>
+                <a href="/users/seeAllPatientsAdmin" class="dropdown-item">Lista de pacientes</a>
+                <a href="/users/seeAllPhysicianAdmin" class="dropdown-item">Lista de médicos</a>
+                <a href="/users/seeAllLabStaffAdmin" class="dropdown-item">Lista de empleados</a>
+                <a href="/users/seeAllAdmin" class="dropdown-item">Lista de administradores</a>
+                <a href="/users/seeAllUsersAdmin" class="dropdown-item">Listar todos</a>
+                <a href="/users/findUserByIdentification" class="dropdown-item">Búsqueda de usuario por cédula</a>
+                <a href="/users/findUserByEmail" class="dropdown-item">Búsqueda de usuario por email</a>
+            </div>
+        </li>
+        {{/if}}
+
+        {{#if Medico}}
+
+        <li class="dropdown" style="cursor:pointer;">
+            <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Órdenes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="/orders/form" class="dropdown-item">Agregar orden</a>
+                <a href="/results/allResults" class="dropdown-item">Exámenes realizados</a>
+            </div>
+        </li>
+        {{/if}}
+
+        {{#if Empleado}}
+
+        <li class="dropdown" style="cursor:pointer;">
+                <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Órdenes
+                </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a href="/orders/allOrders" class="dropdown-item">Órdenes pendientes</a>
+            </div>
+        </li>
+        {{/if}}
+
+        {{#if user}}
+
+            <li class="dropdown" style="cursor:pointer;">
+                <a class="nav-link" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Mi perfil 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a href="/users/myProfile" class="dropdown-item">Mi perfil</a>
+                    <a href="/users/changePasswd" class="dropdown-item">Cambiar contraseña</a>
+                </div>
+            </li>
+        {{/if}}
+        </ul>
+
+        {{#if user}}
+        <span class="font-weight-bold">{{role}} <span class="font-weight-normal"> {{name}} {{lastname}} {{sec_lastname }} </span> </span>
+        <a href="/users/logout">
+            <button type="button" class="btn btn-primary">
+                Cerrar sesión
+            </button> 
+        </a>
+        {{else}}
+        <a  href="/users/signInForm">
+            <button type="button" class="btn btn-primary">
+                Iniciar sesión
+            </button> 
+        </a>
+        {{/if}}
+                                                  
+    </div>
+</nav>

@@ -1,0 +1,51 @@
+<div class="container">
+    <h1 class="text-center">Estadísticas por género</h1>
+    <input type="hidden" id="badResultFemenino" value="{{badResultFemenino}}">
+    <input type="hidden" id="badResultMasculino" value="{{badResultMasculino}}">
+    <input type="hidden" id="normalResultFemenino" value="{{normalResultFemenino}}">
+    <input type="hidden" id="normalResultMasculino" value="{{normalResultMasculino}}">
+    <canvas id="barras"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  var dato1 = parseFloat(document.getElementById('badResultFemenino').value);
+  var dato2 = parseFloat(document.getElementById('badResultMasculino').value);
+  var dato3 = parseFloat(document.getElementById('normalResultFemenino').value);
+  var dato4 = parseFloat(document.getElementById('normalResultMasculino').value);
+
+  var datosNormales = [dato3, dato4];
+  var datos = [dato1, dato2];
+
+  var ctx = document.getElementById('barras').getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Femenino', 'Masculino'],
+      datasets: [{
+        label: 'Exámenes realizados',
+        data: datosNormales,
+        backgroundColor: 'rgba(54, 162, 235, 0.8)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Exámenes anormales',
+        data: datos,
+        backgroundColor: 'rgba(182, 19, 19, 0.8)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>
