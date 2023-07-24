@@ -61,7 +61,6 @@ Para realizar una ejecucion optima del proyecto se debe seguir los siguientes pa
             <li>password: 12345678</li>
         </ul>
     </ul>
-
     <h2>Información Personal de Pacientes</h2>
     <p>Para agendar una cita, se crearon 3 pacientes con la siguiente información de autenticación y cédula:</p>
     <ul>
