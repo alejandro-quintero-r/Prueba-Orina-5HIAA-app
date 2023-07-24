@@ -40,10 +40,10 @@ Para realizar una ejecucion optima del proyecto se debe seguir los siguientes pa
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Información de Autenticación</title>
+    <h2>Información de Autenticación</h2>
 </head>
 <body>
-    <h2>Pruebas de Diferentes Roles</h2>
+    <h3>Pruebas de Diferentes Roles</h3>
     <ul>
         <li><strong>Admi:</strong></li>
         <ul>
@@ -62,7 +62,7 @@ Para realizar una ejecucion optima del proyecto se debe seguir los siguientes pa
         </ul>
     </ul>
 
-    <h2>Información Personal de Pacientes</h2>
+    <h3>Información Personal de Pacientes</h3>
     <p>Para agendar una cita, se crearon 3 pacientes con la siguiente información de autenticación y cédula:</p>
     <ul>
         <li><strong>Paciente 1:</strong></li>
