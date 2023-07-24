@@ -37,5 +37,54 @@ Para realizar una ejecucion optima del proyecto se debe seguir los siguientes pa
   -"nodemon": "^2.0.22"
   
 5. Ejecurtar el comando "npm run dev" para ejecutar el proyecto en: localhost:3000
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Información de Autenticación</title>
+</head>
+<body>
+    <h2>Pruebas de Diferentes Roles</h2>
+    <ul>
+        <li><strong>Admi:</strong></li>
+        <ul>
+            <li>user: administrador@gmail.com</li>
+            <li>password: 12345678</li>
+        </ul>
+        <li><strong>Medico:</strong></li>
+        <ul>
+            <li>user: medico@gmail.com</li>
+            <li>password: 12345678</li>
+        </ul>
+        <li><strong>Empleado:</strong></li>
+        <ul>
+            <li>user: empleado@gmail.com</li>
+            <li>password: 12345678</li>
+        </ul>
+    </ul>
+    <h2>Información Personal de Pacientes</h2>
+    <p>Para agendar una cita, se crearon 3 pacientes con la siguiente información de autenticación y cédula:</p>
+    <ul>
+        <li><strong>Paciente 1:</strong></li>
+        <ul>
+            <li>user: paciente1@gmail.com</li>
+            <li>password: 12345678</li>
+            <li>CC: 26449873</li>
+        </ul>
+        <li><strong>Paciente 2:</strong></li>
+        <ul>
+            <li>user: pacienteFrancisco@gmail.com</li>
+            <li>password: 12345678</li>
+            <li>CC: 91267385</li>
+        </ul>
+        <li><strong>Paciente 3:</strong></li>
+        <ul>
+            <li>user: pacienteelizabeth@gmail.com</li>
+            <li>password: 12345678</li>
+            <li>CC: 55155389</li>
+        </ul>
+    </ul>
+</body>
+</html>
 
-NOTA: Si el proyecto ejecutado presenta problemas en alguna pagina, verificar la version de las dependencias instaladas, reitirse al archivo json de este repositorio para verificar las dependencias y su version 
+
+NOTA: Si el proyecto ejecutado presenta problemas en alguna pagina, verificar la version de las dependencias instaladas, remitirse al archivo json de este repositorio para verificar las dependencias y su version 
