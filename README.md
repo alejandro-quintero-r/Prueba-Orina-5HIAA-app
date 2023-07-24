@@ -37,5 +37,28 @@ Para realizar una ejecucion optima del proyecto se debe seguir los siguientes pa
   -"nodemon": "^2.0.22"
   
 5. Ejecurtar el comando "npm run dev" para ejecutar el proyecto en: localhost:3000
+6. Para realizar las pruebas de los diferentes roles en la pagina se deben ingresar los siguientes datos de autenticacion:
+   Admi:
+     user: administrador@gmail.com
+     password: 12345678
+   Medico:
+     user: medico@gmail.com
+     password: 12345678
+   Empleado:
+     user: empleado@gmail.com
+     password: 12345678
+para este proyecto se crearon 3 pacientes con los siguientes datos de autenticacion y informacion personal para agendar una cita:
+  paciente 1:
+     user: paciente1@gmail.com
+     password: 12345678
+     CC: 26449873
+   Paciente 2:
+     user: pacienteFrancisco@gmail.com
+     password: 12345678
+     CC: 91267385
+   Paciente 3:
+     user: pacienteelizabeth@gmail.com
+     password: 12345678
+     CC: 55155389
 
 NOTA: Si el proyecto ejecutado presenta problemas en alguna pagina, verificar la version de las dependencias instaladas, reitirse al archivo json de este repositorio para verificar las dependencias y su version 
