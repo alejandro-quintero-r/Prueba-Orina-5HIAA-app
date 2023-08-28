@@ -6,6 +6,27 @@ const Results = require('../models/Results');
 
 /* Exámenes agrupados por género */
 statisticsCtrl.renderGenderGraphics = async (req, res) => { 
+    
+    let Empleado = false;
+    let Admin = false;
+    let Medico = false;
+    let Paciente = false;
+    let role = null
+
+    if (req.isAuthenticated()){
+        const role = req.user.role;
+
+        if (role == "Empleado"){
+            Empleado = true
+        } else if (role == "Admin"){
+            Admin = true
+        } else if (role == "Medico"){
+            Medico = true
+        } else if (role == "Paciente"){
+            Paciente = true
+        }
+          
+    }
 
     //Exámenes realizados clasificados por género 
     const orderList = await Orders.find( {"completed": true});
@@ -22,7 +43,6 @@ statisticsCtrl.renderGenderGraphics = async (req, res) => {
         }
     }
     const doneExamsPerGender = {femenino : female, masculino : male  }
-    console.log(doneExamsPerGender)
 
     // Resultados anormales agrupados por género resultados normales de 2 a 9 mg por 24 horas
     const anormalResultsList = await Results.find({
@@ -59,11 +79,34 @@ statisticsCtrl.renderGenderGraphics = async (req, res) => {
     const normalResultMasculino = doneExamsPerGender.masculino
     console.log(badResultFemenino)
 
-    res.render('statistics/statisticsGender', {badResultFemenino, badResultMasculino, normalResultFemenino, normalResultMasculino});    
+    res.render('statistics/statisticsGender', {badResultFemenino, badResultMasculino, normalResultFemenino, normalResultMasculino, Empleado, Medico, Admin, Paciente, role});    
 }; 
 
 /* Agrupados por pueblo */
 statisticsCtrl.renderCityGraphics = async (req, res) => { 
+
+    let Empleado = false;
+    let Admin = false;
+    let Medico = false;
+    let Paciente = false;
+
+    if (req.isAuthenticated()){
+        const role = req.user.role;
+
+        if (role == "Empleado"){
+            Empleado = true
+        } else if (role == "Admin"){
+            Admin = true
+        } else if (role == "Medico"){
+            Medico = true
+        } else if (role == "Paciente"){
+            Paciente = true
+        }
+          
+    }
+
+
+
     //Exámenes realizados clasificados por ciudad
     const orderList = await Orders.find( {"completed": true});
     const cities = [];
@@ -86,11 +129,33 @@ statisticsCtrl.renderCityGraphics = async (req, res) => {
     console.log(citiesCount);
     const keys = Object.keys(citiesCount);
     const valores = Object.values(citiesCount);
-    res.render('statistics/statiticsCity', {keys, valores});    
+    res.render('statistics/statiticsCity', {keys, valores, Empleado, Medico, Admin, Paciente});    
 }; 
 
 /* Exámenes anormales */
 statisticsCtrl.anormalResultsList = async (req, res) => {
+    let Empleado = false;
+    let Admin = false;
+    let Medico = false;
+    let Paciente = false;
+    let role = null
+
+    if (req.isAuthenticated()){
+        const role = req.user.role;
+
+        if (role == "Empleado"){
+            Empleado = true
+        } else if (role == "Admin"){
+            Admin = true
+        } else if (role == "Medico"){
+            Medico = true
+        } else if (role == "Paciente"){
+            Paciente = true
+        }
+          
+    }
+
+
     const resultList = await Results.find({$or: [
         {result:{$gte: 9}},
         {result:{$lte: 2}}
@@ -107,7 +172,7 @@ statisticsCtrl.anormalResultsList = async (req, res) => {
         data.push(infoResult);
     }
     console.log(data)
-    res.render('statistics/anormalResults', {data});    
+    res.render('statistics/anormalResults', {data, Empleado, Medico, Admin, Paciente, role});    
 }; 
 
 

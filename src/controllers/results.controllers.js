@@ -23,6 +23,28 @@ resultsCtrl.addResult = async (req, res)=>{
 };
 
 resultsCtrl.findResults = async (req, res) => {
+    let Empleado = false;
+    let Admin = false;
+    let Medico = false;
+    let Paciente = false;
+    let role = null
+
+    if (req.isAuthenticated()){
+        const role = req.user.role;
+
+        if (role == "Empleado"){
+            Empleado = true
+        } else if (role == "Admin"){
+            Admin = true
+        } else if (role == "Medico"){
+            Medico = true
+        } else if (role == "Paciente"){
+            Paciente = true
+        }
+          
+    }
+
+
     const resultList = await Result.find();
     data = [];
 
@@ -36,7 +58,7 @@ resultsCtrl.findResults = async (req, res) => {
         data.push(infoResult);
     }
 
-    res.render('results/resultList', {data})  
+    res.render('results/resultList', {data, Empleado, Medico, Admin, Paciente, role})  
 };
 
 resultsCtrl.findMyResults = async (req, res) => {

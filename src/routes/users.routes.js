@@ -34,7 +34,7 @@ router.post('/users/createAdmin', createAdmin);
 //////////////Consultas, borrado y edición de usuarios //////////////////////////////
 //Permite al admin ver todos los usuarios
 router.get('/users/seeAllPatientsAdmin', isAuthenticated, isAdmin, seeAllPatientsAdmin);
-router.get('/users/seeAllPhysicianAdmin', isAuthenticated, isAdmin, seeAllPhysicianAdmin)
+router.get('/users/seeAllPhysicianAdmin', isAuthenticated, isAdmin, seeAllPhysicianAdmin);
 router.get('/users/seeAllLabStaffAdmin', isAuthenticated, isAdmin, seeAllLabStaffAdmin);
 router.get('/users/seeAllAdmin', isAuthenticated, isAdmin, seeAllAdmin);
 router.get('/users/seeAllUsersAdmin', isAuthenticated, isAdmin, seeAllUsersAdmin);

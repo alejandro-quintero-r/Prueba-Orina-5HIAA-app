@@ -12,11 +12,11 @@
   <table class="table table-light table-bordered table-hover overflow-y: hidden">
     <thead class="table-secondary">
       <tr>
-        <th scope="col">Paciente</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Hora</th>
-        <th scope="col">Observación</th>
-        <th scope="col">Resultado</th>
+        <th scope="col" class="text-center">Paciente</th>
+        <th scope="col" class="text-center">Fecha</th>
+        <th scope="col" class="text-center">Hora</th>
+        <th scope="col" class="text-center">Observación</th>
+        <th scope="col" class="text-center">Acciones</th>
       </tr>
     </thead>
     <tbody>   
@@ -26,7 +26,10 @@
           <td>{{date}}</td>
           <td>{{hour}}</td>
           <td>{{observation}}</td>
-          <td class="d-flex flex-column align-items-center"><a href="/results/form/{{orderID}}"> <button class="btn btn-info "> Agregar resultado</a> </button> </td>
+          <td class="d-flex align-items-center justify-content-center">
+            <div class="mx-1"><a href="/orders/bookingForm/{{orderID}}"> <button class="btn btn-warning "> Agendar cita</a> </button> </div>
+            <div class="mx-1"><a href="/results/form/{{orderID}}"> <button class="btn btn-success "> Agregar resultado</a> </button> </div>
+          </td> 
         </tr>
       {{/each}}     
     </tbody>

@@ -1,0 +1,34 @@
+<div class="col-md-4 mx-auto">
+    <h1 class="h4 font-weight-bold text-center">Agendamiento toma de examen</h1>
+    <hr>
+    <form action="/orders/bookingForm/{{orderId}}?_method=PUT" class= "justify-content-center" method="POST">  
+    <input type="hidden" name="_method" value="PUT">                        
+
+        
+        <input type="hidden" name="orderId" value="{{orderId._id}}">
+        <div class="form-group row">                      
+            <div class="col-md-9 mx-auto">
+                <label for="date">Fecha</label>
+                <input type="date" name="date" class="form-control bg-light">
+            </div>                   
+        </div> 
+
+        <div class="form-group row">                      
+            <div class="col-md-9 mx-auto">
+                <label for="hour">Hora</label>
+                <input type="time" name="hour" class="form-control bg-light">
+            </div>                   
+        </div> 
+
+        
+        <div class="form-group row">
+            <div class="col-md-15 mx-auto text-center">                    
+                <button class="btn btn-primary">Agendar</button>
+            </div>   
+        </div> 
+    </form>                   
+    <hr>
+</div>
+
+
+

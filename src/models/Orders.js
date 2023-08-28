@@ -7,11 +7,11 @@ const OrdersSchema = Schema({
     },
     date: {
         type: String,
-        required: true
+        required: false
     },
     hour: {
         type: String,
-        required: true
+        required: false
     }, 
     observation : {
         type: String

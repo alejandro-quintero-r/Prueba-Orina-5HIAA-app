@@ -46,7 +46,7 @@ usersCtrl.started = (req, res)=>{
 /////////// Salida de la plataforma /////////////////////////
 usersCtrl.logout = (req, res)=>{
     req.logout();
-    req.flash("success_msg", "Usted acaba de salir de (PSA information system) - Hasta pronto!!!");
+    req.flash("success_msg", "Ha cerrado sesión exitosamente");
     res.redirect("/");
 };
 
@@ -347,10 +347,9 @@ usersCtrl.seeUserAdminForm = async (req, res) => {
 usersCtrl.editUserFormAdmin = async (req, res) => {
     const user1 = await User.findById(req.params.id);
     const Admin = true;    
-    res.render('users/editUserAdminForm', {user1, Admin})      
+    res.render('users/editUserAdminForm', {user1, Admin})     
 };
 usersCtrl.editUserAdmin = async (req, res) => {  
-    //console.log(req.body)
     const {name, lastname, sec_lastname, identification, email, role} = req.body  
     await User.findByIdAndUpdate(req.params.id, {name, lastname, sec_lastname, identification, email, role})  
     const admin = true
