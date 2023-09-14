@@ -47,17 +47,16 @@ resultsCtrl.findResults = async (req, res) => {
 
     const resultList = await Result.find();
     data = [];
-
     for (const user in resultList) {
-        const {result, observation} = resultList[user];
+        let {result, observation, createdAt} = resultList[user];
+        createdAt = createdAt.toLocaleDateString()
         const orderID = resultList[user].orderId;
         const order = await Orders.findById(orderID).exec();
         const idUser = order.userID;
         const {name, lastname, sec_lastname} = await User.findById(idUser).exec();
-        const infoResult = {name, lastname, sec_lastname, result, observation}; 
+        const infoResult = {name, lastname, sec_lastname, result, observation, createdAt}; 
         data.push(infoResult);
     }
-
     res.render('results/resultList', {data, Empleado, Medico, Admin, Paciente, role})  
 };
 

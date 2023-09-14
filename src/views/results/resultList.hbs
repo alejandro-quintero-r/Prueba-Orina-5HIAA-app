@@ -12,6 +12,7 @@
         <th scope="col">Paciente</th>
         <th scope="col">Resultado</th>
         <th scope="col">Observación</th>
+        <th scope="col">Fecha</th>
       </tr>
     </thead>
     <tbody>   
@@ -20,6 +21,7 @@
           <th scope="row">{{name}} {{lastname}} {{sec_lastname}}</th>
           <td>{{result}}</td>
           <td>{{observation}}</td>
+          <td>{{createdAt}}</td>
           {{!-- <td><a href="/results/form/{{orderID}}">Agregar resultado</a></td> --}}
         </tr>
       {{/each}}     
